@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     BoxCollider2D scoreCollider;
     [SerializeField]TextMeshProUGUI scoreText;
+    [SerializeField]TextMeshProUGUI gameOverText;
      bool isGameFinished = false;
     bool isGameOver = false;
     public int score { get; private set; } = 0;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         scoreCollider = GetComponent<BoxCollider2D>();
         Time.timeScale = 1.0f;  
-      
+      gameOverText.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -52,11 +53,14 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         Time.timeScale = 0f;
-
+        gameOverText.text = "Game Over";
+        gameOverText.gameObject.SetActive(true);
     }
     void FinishGame()
     {
         isGameFinished = true;
         Time.timeScale = 0;
+        gameOverText.text = "Game Finished";
+        gameOverText.gameObject.SetActive(true);
     }
 }
