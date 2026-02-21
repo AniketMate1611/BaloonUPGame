@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: d71d67b6805189b41b9205fc424400bf
+  - enabled: 1
     path: Assets/Scenes/BaloonGameScene.unity
     guid: 5537fdeea7a97b54b9141b2dff55f700
   m_configObjects: {}
